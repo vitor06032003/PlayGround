@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f6f7ed" />
+  <title>Pocket Wilds — Field Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="game-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Pocket Wilds home"><span class="brand-mark">✳</span><span>pocket<span class="brand-light">wilds</span></span></a>
+      <div class="header-center"><span class="season-dot"></span><span>FIELD SEASON 01</span><span class="header-divider">/</span><span id="day-count">DAY 01</span></div>
+      <div class="header-actions"><div class="coin-pill"><span class="coin-icon">✦</span><span id="coins">24</span></div><button class="icon-button" id="sound-btn" aria-label="Toggle sound">♫</button><button class="icon-button help-button" id="help-btn" aria-label="How to play">?</button></div>
+    </header>
+    <div class="content-grid">
+      <aside class="sidebar">
+        <div class="trainer-card"><div class="avatar">🧢</div><div><div class="eyebrow">FIELD RESEARCHER</div><div class="trainer-name">Rookie Rowan</div><div class="rank-line"><span class="rank-badge">RANK <b id="rank">1</b></span><span class="rank-xp"><span id="xp">0</span> / <span id="xp-next">30</span> XP</span></div></div></div>
+        <div class="nav-label">YOUR JOURNEY</div>
+        <button class="nav-item active" data-view="trail"><span class="nav-icon">⌁</span><span>Wild trail</span><span class="nav-count live">LIVE</span></button>
+        <button class="nav-item" data-view="guide"><span class="nav-icon">▤</span><span>Field guide</span><span class="nav-count" id="guide-count">0 / 12</span></button>
+        <button class="nav-item" data-view="camp"><span class="nav-icon">⌂</span><span>Base camp</span><span class="nav-count">↗</span></button>
+        <div class="side-divider"></div>
+        <div class="section-heading"><span>YOUR TEAM</span><span class="team-count" id="team-count">1 / 4</span></div>
+        <div class="team-list" id="team-list"></div>
+        <div class="sidebar-bottom"><div class="tiny-spark">✳</div><div><strong>Every wild has a story.</strong><p>Meet them all, one trail at a time.</p></div></div>
+      </aside>
+      <main class="main-area">
+        <section class="trail-view" id="trail-view">
+          <div class="trail-heading"><div><div class="eyebrow green-eyebrow"><span class="pulse-dot"></span> OUT IN THE WILD</div><h1>Whispering <span>Meadow</span></h1><p class="subheading">A sunny little trail where new friends grow.</p></div><button class="zone-button" id="zone-button"><span>⌖</span> <span>MEADOW</span><span class="chevron">⌄</span></button></div>
+          <div class="scene-card">
+            <div class="scene-topline"><div class="weather"><span>☀</span> SOFT SUNSHINE <i></i> 22°C</div><div class="encounter-count"><span class="tiny-ball">●</span> ENCOUNTER <b id="encounter-num">01</b></div></div>
+            <div class="scene-art" id="scene-art">
+              <div class="sun-disc"></div><div class="cloud cloud-one"></div><div class="cloud cloud-two"></div>
+              <div class="mountain mountain-back"></div><div class="mountain mountain-front"></div>
+              <div class="tree tree-left"><i></i><b></b></div><div class="tree tree-right"><i></i><b></b></div>
+              <div class="grass-hill hill-back"></div><div class="grass-hill hill-front"></div>
+              <div class="flower f1">✿</div><div class="flower f2">✿</div><div class="flower f3">✿</div><div class="flower f4">✿</div>
+              <div class="encounter-wrap"><div class="sparkles">✧ <i>✦</i> ✧</div><div class="creature" id="wild-creature"></div><div class="creature-shadow"></div></div>
+              <div class="wild-tag"><span class="type-dot" id="wild-type-dot"></span><span id="wild-name">Spriglet</span><span class="wild-level">LV. <b id="wild-level">1</b></span></div>
+              <div class="scene-caption">Something rustles in the tall grass...</div>
+              <div class="scene-deco d1">✦</div><div class="scene-deco d2">✧</div>
+            </div>
+            <div class="battle-panel"><div class="wild-health"><div class="health-row"><span>WILD <b id="health-name">SPRIGLET</b></span><span><b id="hp-text">12</b> / <span id="max-hp">12</span></span></div><div class="health-track"><div class="health-fill" id="health-fill"></div></div></div><div class="battle-feedback" id="battle-feedback">A new friend is waiting to say hello.</div></div>
+            <div class="action-row"><button class="action-button attack-button" id="attack-btn"><span class="button-symbol">↗</span><span><b>Boop!</b><small>Tap to make a friend</small></span><span class="button-key">SPACE</span></button><button class="action-button catch-button" id="catch-btn"><span class="button-symbol">◉</span><span><b>Make friends</b><small id="catch-cost">1 wild berry</small></span><span class="berry-count"><span>●</span> <b id="berries">5</b></span></button></div>
+          </div>
+          <div class="trail-footer"><div class="trail-progress"><div class="progress-icon">✳</div><div class="progress-copy"><strong>Meadow discoveries</strong><span><b id="zone-caught">0</b> of 4 little locals met</span></div><div class="progress-track"><i id="zone-progress"></i></div></div><button class="auto-button" id="auto-btn"><span class="auto-icon">▶</span><span><b id="auto-label">Auto-boop</b><small id="auto-state">OFF</small></span><span class="switch"></span></button></div>
+        </section>
+        <section class="guide-view hidden" id="guide-view"><div class="subpage-heading"><div><div class="eyebrow green-eyebrow">YOUR GROWING COLLECTION</div><h1>Field <span>guide</span></h1><p class="subheading">Every friend you meet gets a page of their own.</p></div><div class="guide-total"><b id="guide-total">0</b><span>DISCOVERED</span></div></div><div class="guide-grid" id="guide-grid"></div></section>
+        <section class="camp-view hidden" id="camp-view"><div class="subpage-heading"><div><div class="eyebrow green-eyebrow">A PLACE TO REST & GROW</div><h1>Base <span>camp</span></h1><p class="subheading">Little upgrades make every adventure brighter.</p></div><div class="camp-icon">⌂</div></div><div class="camp-card"><div class="camp-illustration">🏕️<span>✦</span></div><div class="camp-info"><div class="eyebrow">YOUR HOME IN THE MEADOW</div><h2>A cozy spot to call yours.</h2><p>Spend your trail tokens on upgrades. Better gear means more berries, stronger boops, and friends from farther away.</p></div></div><div class="upgrade-list" id="upgrade-list"></div></section>
+        <div class="toast" id="toast" role="status"></div>
+      </main>
+      <aside class="right-rail">
+        <div class="rail-title"><span>TRAIL NOTES</span><span class="note-dot"></span></div>
+        <div class="daily-card"><div class="daily-top"><span class="daily-icon">☀</span><span class="eyebrow">TODAY'S LITTLE GOAL</span></div><h3 id="goal-title">Say hello to 3 wilds</h3><div class="goal-progress"><div class="goal-bar"><i id="goal-fill"></i></div><span id="goal-progress-text">0 / 3</span></div><div class="goal-reward">✦ <b>+12</b> trail tokens</div></div>
+        <div class="rail-divider"></div>
+        <div class="section-heading activity-heading"><span>TRAIL LOG</span><span class="log-live"><i></i> LIVE</span></div>
+        <div class="activity-list" id="activity-list"></div>
+        <div class="tip-card"><div class="tip-icon">✧</div><div><div class="eyebrow">A LITTLE TIP</div><p id="tip-text">Booping a wild makes it easier to befriend. A gentle hello goes a long way!</p></div><button id="tip-next" aria-label="Next tip">↗</button></div>
+        <div class="rail-footer"><span>POCKET WILDS</span><span>v1.0.4</span></div>
+      </aside>
+    </div>
+    <div class="mobile-nav"><button class="mobile-nav-item active" data-view="trail"><span>⌁</span>Trail</button><button class="mobile-nav-item" data-view="guide"><span>▤</span>Guide</button><button class="mobile-nav-item" data-view="camp"><span>⌂</span>Camp</button></div>
+  </div>
+  <div class="modal-backdrop hidden" id="modal"><div class="modal-card"><button class="modal-close" id="modal-close">×</button><div class="modal-emblem">✳</div><div class="eyebrow green-eyebrow">WELCOME TO THE WILD</div><h2>Every great journey starts with a hello.</h2><p>Boop the wild to earn trail tokens and research. When it's feeling friendly, use a berry to invite it onto your team. Meet all the meadow locals, then save up to visit a new trail.</p><div class="modal-actions"><button class="primary-small" id="got-it">Got it, let's go!</button><button class="secondary-small" id="reset-game">Start fresh</button></div><small>Your progress is saved automatically on this device.</small></div></div>
+  <script src="game.js"></script>
+</body>
+</html>
